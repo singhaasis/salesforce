@@ -1,0 +1,16 @@
+.header{
+	background-color : rgb(3, 6, 150);
+	padding: 5px;
+}
+.logo{
+	height: 32px;
+    width: 96px;
+}
+.cart{
+	float: right;
+}
+.cartValue{
+	background-color: red;
+	color: white;
+	margin-left: -23px;
+}

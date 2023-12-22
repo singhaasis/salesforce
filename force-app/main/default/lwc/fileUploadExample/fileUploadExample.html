@@ -1,0 +1,22 @@
+<template>
+    <template if:true={showNoContent}>
+    
+    <lightning-formatted-rich-text value={text}>
+    </lightning-formatted-rich-text>
+    </template>
+    
+    <template if:true={showNow}>
+    
+    <lightning-file-upload
+    label="File Upload"
+    name="fileUploader"
+    onuploadfinished={handleUploadFinished}
+    multiple>
+    </lightning-file-upload>
+    </template>
+    <template if:false={showNow}>
+    <lightning-formatted-rich-text value={content}>
+    </lightning-formatted-rich-text>
+    
+    </template> ̰
+</template>

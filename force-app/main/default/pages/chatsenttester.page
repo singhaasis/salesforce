@@ -1,0 +1,15 @@
+<apex:page >
+    <apex:includeScript value="/support/console/57.0/integration.js"/>
+    <script type="text/javascript">
+        var eventHandler = function (result) {
+            var theMessage = result.content;
+            alert('The agent is attempting to send the following message: ' + result.content);
+            sforce.console.chat.sendMessage(chatKey, theMessage)
+            alert('The following message has been sent: ' + theMessage);
+        }
+        //Get the value for 'myChatKey' from the sforce.console.chat.getDetailsByPrimaryTabId() or other chat methods. 
+        //These values are for example purposes only
+        var chatKey = 'myChatKey';
+        sforce.console.chat.onAgentSend(chatKey, eventHandler);
+    </script>
+</apex:page>

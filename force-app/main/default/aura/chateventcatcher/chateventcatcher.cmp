@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" description="Conversation toolkit api sample">
+  <lightning:conversationToolkitAPI aura:id="conversationKit" />
+  <aura:handler event="lightning:conversationNewMessage" action="{!c.onNewMessage}" />
+</aura:component>

@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Top Headlines">
+        <div class="slds-scrollable slds-p-around_medium" style="height:24rem;background-color:rgb(228, 225, 225)" tabindex="0">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="9" >
+                    <lightning-input type="text" variant="label-hidden" label="Enter Country Code" position-text="Enter Country Code" onchange={changeHandler}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="horizontal-medium">
+                    <lightning-button label="Fetch" variant="brand" onclick={fetchHeadlines}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <template if:false={loaded}>
+                <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+            </template>
+            <template for:each={articles} for:item="article">
+                <lightning-layout multiple-rows key={article.title} class="slds-box slds-m-top_small" style="background-color:white;">
+                    <lightning-layout-item size="2" padding="around-medium">
+                        <img 
+                        src={article.urlToImage} 
+                        alt="news Image" 
+                        height="100px" 
+                        width="100px"/>                    
+                    </lightning-layout-item>
+                    <lightning-layout-item size="10" padding="around-medium">
+                        <a href={article.url}>{article.title}</a>
+                        
+                    </lightning-layout-item>
+                </lightning-layout>                
+            </template>
+        </div>
+    </lightning-card>
+</template>
